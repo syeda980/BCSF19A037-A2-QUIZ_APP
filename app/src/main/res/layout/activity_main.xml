@@ -32,6 +32,54 @@
             android:textAlignment="center"
             />
 
+        <Button
+            android:id="@+id/AnswerA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/white"
+            android:text="AnswerA"
+            android:textColor="@color/black"
+            tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/AnswerB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/white"
+            android:text="Answer B"
+            android:textColor="@color/black"
+            tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/AnswerC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/white"
+            android:text="Answer C"
+            android:textColor="@color/black"
+            tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/AnswerD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/white"
+            android:text="Answer D"
+            android:textColor="@color/black"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/black"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
     </LinearLayout>
 
 </RelativeLayout>
