@@ -82,6 +82,61 @@
             android:textColor="@color/white"
             android:textSize="17dp" />
 
+        <TextView
+            android:id="@+id/SelectedAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:fontFamily="monospace"
+            android:text="Selected Answer : "
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/CorrectAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:backgroundTint="#21F387"
+            android:fontFamily="monospace"
+            android:text="Correct Answer: "
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="17dp" />
+
+        <Button
+            android:id="@+id/Next"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="145dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="15dp"
+            android:backgroundTint="#9D4CAF"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Exit"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="145dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="15dp"
+            android:backgroundTint="#AF4C4C"
+            android:text="Exit"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+
         <Button
             android:id="@+id/AnswerA"
             android:layout_width="match_parent"
@@ -163,42 +218,7 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
-        <TextView
-            android:id="@+id/SelectedAnswer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="monospace"
-            android:text="Here Comes Selected Answer "
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="17dp" />
 
-        <TextView
-            android:id="@+id/CorrectAnswer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="monospace"
-            android:text="Here Comes Correct Answer "
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:backgroundTint="#21F3AA"
-            android:textSize="17dp" />
-
-
-        <Button
-            android:id="@+id/Next"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="15dp"
-            android:backgroundTint="#9D4CAF"
-            android:text="Next"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
 
 
     </LinearLayout>

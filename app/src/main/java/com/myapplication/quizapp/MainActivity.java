@@ -19,9 +19,9 @@ import java.util.Collections;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    TextView question, totalQuestion,remQues,correctRes,wrongRes,selectedAns,correctAns;
+    TextView question, totalQuestion,remQues,correctRes,wrongRes,selectedAns,correctAns,exit;
     Button btnA, btnB, btnC, btnD, btnSubmit,restartBtn,summary,next;
-    int correct = 0;
+    int correct = 0,counter=0;
     int j=0;
     int wrong_Answer = 0;
     int totalQuestions = QuestionData.questions.length;
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         next=findViewById(R.id.Next);
         correctAns=findViewById(R.id.CorrectAnswer);
         selectedAns=findViewById(R.id.SelectedAnswer);
+        exit=findViewById(R.id.Exit);
 
         correctRes.setVisibility(View.INVISIBLE);
         wrongRes.setVisibility(View.INVISIBLE);
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         next.setVisibility(View.GONE);
         correctAns.setVisibility(View.GONE);
         selectedAns.setVisibility(View.GONE);
+        exit.setVisibility(View.INVISIBLE);
 
 
         btnA.setOnClickListener(this);
@@ -71,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnC.setOnClickListener(this);
         btnD.setOnClickListener(this);
         btnSubmit.setOnClickListener(this);
+        next.setOnClickListener(this);
+        exit.setOnClickListener(this);
 
         totalQuestion.setText("Total Question: " + totalQuestions);
         remQues.setText("Remaining: "+remQuestions);
@@ -120,6 +124,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Log.d("SUMMARY","SUMMARYYYY111");
             viewSummary();
         }
+        if(view.getId()==R.id.Next)
+        {
+            if(counter!=9) {
+                viewSummary();
+            }
+            else
+            {
+                next.setVisibility(View.INVISIBLE);
+                exit.setVisibility(View.VISIBLE);
+            }
+        }
+        if(view.getId()==R.id.Exit)
+        {
+            System.exit(0);
+        }
+
 
 
 
@@ -205,6 +225,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnB.setVisibility(View.INVISIBLE);
         btnC.setVisibility(View.INVISIBLE);
         btnD.setVisibility(View.INVISIBLE);
+        exit.setVisibility(View.INVISIBLE);
         btnSubmit.setVisibility(View.INVISIBLE);
         correctRes.setVisibility(View.VISIBLE);
         wrongRes.setVisibility(View.VISIBLE);
@@ -237,7 +258,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     void viewSummary()
     {
-        Log.d("SUMMARYInFUNC", String.valueOf(Qnumbers.size()));
         question.setVisibility(View.INVISIBLE);
 //        btnA.setVisibility(View.INVISIBLE);
 //        btnB.setVisibility(View.INVISIBLE);
@@ -251,13 +271,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         totalQuestion.setVisibility(View.INVISIBLE);
         remQues.setVisibility(View.INVISIBLE);
 
-        for(int a=0;a<Qnumbers.size();a++)
-        {
+
             question.setVisibility(View.VISIBLE);
-            question.setText(QuestionData.questions[Qnumbers.get(a)]);
+            question.setText(QuestionData.questions[Qnumbers.get(counter)]);
             selectedAns.setVisibility(View.VISIBLE);
-            selectedAns.setText(selectedAnswers.get(a));
-            if(selectedAnswers.get(a)==QuestionData.answers[Qnumbers.get(a)])
+            selectedAns.setText("Selected Answer :"+selectedAnswers.get(counter));
+            if(selectedAnswers.get(counter)==QuestionData.answers[Qnumbers.get(counter)])
             {
                 selectedAns.setBackgroundColor(Color.GREEN);
             }
@@ -266,9 +285,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 selectedAns.setBackgroundColor(Color.RED);
             }
             correctAns.setVisibility(View.VISIBLE);
-            correctAns.setText(QuestionData.answers[Qnumbers.get(a)]);
+            correctAns.setText("Correct Answer: "+QuestionData.answers[Qnumbers.get(counter)]);
             next.setVisibility(View.VISIBLE);
-        }
+            counter++;
+
     }
 
 }
