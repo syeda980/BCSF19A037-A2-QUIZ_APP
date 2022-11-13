@@ -266,9 +266,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         correctAns.setText("Correct Answer: "+QuestionData.answers[Qnumbers.get(counter)]);
         next.setVisibility(View.VISIBLE);
         next.setBackgroundColor(Color.rgb(157,76,175));
-
         counter++;
-
     }
 
 }
