@@ -176,7 +176,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             showResult();
             return;
         }
-        //Random rnd = new Random();
         qNo=numbers.get(index);
         index++;
         Qnumbers.add(qNo);
@@ -184,32 +183,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case 0:
                 generateQuestion(qNo);
             case 1:
-              //  Qnumbers.add(qNo);
                 generateQuestion(qNo);
-
             case 2:
-             //   Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 3:
-             //   Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 4:
-            //    Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 5:
-            //    Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 6:
-            //    Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 7:
-           //     Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 8:
-            //    Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 9:
-            //    Qnumbers.add(qNo);
                 generateQuestion(qNo);
 
 
@@ -261,24 +250,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         wrongRes.setVisibility(View.INVISIBLE);
         totalQuestion.setVisibility(View.INVISIBLE);
         remQues.setVisibility(View.INVISIBLE);
+        question.setVisibility(View.VISIBLE);
+        question.setText(QuestionData.questions[Qnumbers.get(counter)]);
+        selectedAns.setVisibility(View.VISIBLE);
+        selectedAns.setText("Selected Answer :"+selectedAnswers.get(counter));
+        if(selectedAnswers.get(counter)==QuestionData.answers[Qnumbers.get(counter)])
+        {
+            selectedAns.setBackgroundColor(Color.GREEN);
+        }
+        else
+        {
+            selectedAns.setBackgroundColor(Color.RED);
+        }
+        correctAns.setVisibility(View.VISIBLE);
+        correctAns.setText("Correct Answer: "+QuestionData.answers[Qnumbers.get(counter)]);
+        next.setVisibility(View.VISIBLE);
+        next.setBackgroundColor(Color.rgb(157,76,175));
 
-
-            question.setVisibility(View.VISIBLE);
-            question.setText(QuestionData.questions[Qnumbers.get(counter)]);
-            selectedAns.setVisibility(View.VISIBLE);
-            selectedAns.setText("Selected Answer :"+selectedAnswers.get(counter));
-            if(selectedAnswers.get(counter)==QuestionData.answers[Qnumbers.get(counter)])
-            {
-                selectedAns.setBackgroundColor(Color.GREEN);
-            }
-            else
-            {
-                selectedAns.setBackgroundColor(Color.RED);
-            }
-            correctAns.setVisibility(View.VISIBLE);
-            correctAns.setText("Correct Answer: "+QuestionData.answers[Qnumbers.get(counter)]);
-            next.setVisibility(View.VISIBLE);
-            counter++;
+        counter++;
 
     }
 
