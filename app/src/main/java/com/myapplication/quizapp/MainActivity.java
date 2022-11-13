@@ -100,14 +100,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
 
+    }
+    public ArrayList<Integer> shuffleOptionList() {
+        ArrayList numbers = new ArrayList();
+        for (int i = 0; i < 4; i++) {
+            numbers.add(i);
+        }
+        Collections.shuffle(numbers);
+        return numbers;
 
-
-
-
-
-
-
-
+    }
+    public ArrayList<Integer> shuffleQuestionList() {
+        ArrayList numbers = new ArrayList();
+        for (int i = 0; i < QuestionData.questions.length; i++) {
+            numbers.add(i);
+        }
+        Collections.shuffle(numbers);
+        return numbers;
     }
     public void generateQuestion(int index)
     {}
