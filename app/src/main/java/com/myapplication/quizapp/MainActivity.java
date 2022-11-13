@@ -19,8 +19,8 @@ import java.util.Collections;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    TextView question, totalQuestion,remQues,correctRes,wrongRes;
-    Button btnA, btnB, btnC, btnD, btnSubmit,restartBtn,summary;
+    TextView question, totalQuestion,remQues,correctRes,wrongRes,selectedAns,correctAns;
+    Button btnA, btnB, btnC, btnD, btnSubmit,restartBtn,summary,next;
     int correct = 0;
     int j=0;
     int wrong_Answer = 0;
@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int currentQuestion = 0, qNo = 0,index=0;
     String answer = "",selectedAnswer="";
     ArrayList<Integer>numbers=shuffleQuestionList();
+    ArrayList<String>selectedAnswers=new ArrayList<>();
+    ArrayList<Integer>Qnumbers=new ArrayList<>();
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -47,16 +49,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         restartBtn=findViewById(R.id.restart);
         correctRes=findViewById(R.id.Correct);
         wrongRes=findViewById(R.id.Wrong);
-        summary=findViewById(R.id.viewSummary);
+        summary=findViewById(R.id.summary);
+        next=findViewById(R.id.Next);
+        correctAns=findViewById(R.id.CorrectAnswer);
+        selectedAns=findViewById(R.id.SelectedAnswer);
 
         correctRes.setVisibility(View.INVISIBLE);
         wrongRes.setVisibility(View.INVISIBLE);
         restartBtn.setVisibility(View.INVISIBLE);
         summary.setVisibility(View.INVISIBLE);
+        next.setVisibility(View.GONE);
+        correctAns.setVisibility(View.GONE);
+        selectedAns.setVisibility(View.GONE);
 
 
         btnA.setOnClickListener(this);
         restartBtn.setOnClickListener(this);
+        summary.setOnClickListener(this);
+
         btnB.setOnClickListener(this);
         btnC.setOnClickListener(this);
         btnD.setOnClickListener(this);
@@ -76,13 +86,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnC.setBackgroundColor(Color.WHITE);
         btnD.setBackgroundColor(Color.WHITE);
         restartBtn.setBackgroundColor(Color.rgb(76,175,80));
-        Button clicked=(Button)view;
+        summary.setBackgroundColor(Color.rgb(157,76,175));
 
+        Button clicked=(Button)view;
         if(view.getId()==R.id.restart)
         {
             numbers=shuffleQuestionList();
             restartQuiz();
         }
+
         if(clicked.getId()==R.id.submit)
         {
             if(selectedAnswer.equals(answer))
@@ -100,9 +112,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else{
             selectedAnswer=clicked.getText().toString();
+            selectedAnswers.add(selectedAnswer);
             clicked.setBackgroundColor(Color.LTGRAY);
         }
-
+        if(view.getId()==R.id.summary)
+        {
+            Log.d("SUMMARY","SUMMARYYYY111");
+            viewSummary();
+        }
 
 
 
@@ -145,27 +162,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Random rnd = new Random();
         qNo=numbers.get(index);
         index++;
+        Qnumbers.add(qNo);
         switch (qNo) {
             case 0:
                 generateQuestion(qNo);
             case 1:
+              //  Qnumbers.add(qNo);
                 generateQuestion(qNo);
 
             case 2:
+             //   Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 3:
+             //   Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 4:
+            //    Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 5:
+            //    Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 6:
+            //    Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 7:
+           //     Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 8:
+            //    Qnumbers.add(qNo);
                 generateQuestion(qNo);
             case 9:
+            //    Qnumbers.add(qNo);
                 generateQuestion(qNo);
 
 
@@ -183,11 +210,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         wrongRes.setVisibility(View.VISIBLE);
         correctRes.setText("CORRECT: "+correct);
         wrongRes.setText("WRONG: "+wrong_Answer);
-        restartBtn.setVisibility(View.VISIBLE);
         summary.setVisibility(View.VISIBLE);
-
-
-
+        restartBtn.setVisibility(View.VISIBLE);
     }
     void restartQuiz(){
         Log.d("here1","in restart");
@@ -205,9 +229,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         correctRes.setVisibility(View.INVISIBLE);
         wrongRes.setVisibility(View.INVISIBLE);
         restartBtn.setVisibility(View.INVISIBLE);
+        summary.setVisibility(View.INVISIBLE);
+        next.setVisibility(View.INVISIBLE);
         remQues.setText("Remaining: "+remQuestions);
         //numbers=shuffleQuestionList();
         generateMCQ();
+    }
+    void viewSummary()
+    {
+        Log.d("SUMMARYInFUNC", String.valueOf(Qnumbers.size()));
+        question.setVisibility(View.INVISIBLE);
+//        btnA.setVisibility(View.INVISIBLE);
+//        btnB.setVisibility(View.INVISIBLE);
+//        btnC.setVisibility(View.INVISIBLE);
+//        btnD.setVisibility(View.INVISIBLE);
+        btnSubmit.setVisibility(View.INVISIBLE);
+        summary.setVisibility(View.INVISIBLE);
+        restartBtn.setVisibility(View.INVISIBLE);
+        correctRes.setVisibility(View.INVISIBLE);
+        wrongRes.setVisibility(View.INVISIBLE);
+        totalQuestion.setVisibility(View.INVISIBLE);
+        remQues.setVisibility(View.INVISIBLE);
+
+        for(int a=0;a<Qnumbers.size();a++)
+        {
+            question.setVisibility(View.VISIBLE);
+            question.setText(QuestionData.questions[Qnumbers.get(a)]);
+            selectedAns.setVisibility(View.VISIBLE);
+            selectedAns.setText(selectedAnswers.get(a));
+            if(selectedAnswers.get(a)==QuestionData.answers[Qnumbers.get(a)])
+            {
+                selectedAns.setBackgroundColor(Color.GREEN);
+            }
+            else
+            {
+                selectedAns.setBackgroundColor(Color.RED);
+            }
+            correctAns.setVisibility(View.VISIBLE);
+            correctAns.setText(QuestionData.answers[Qnumbers.get(a)]);
+            next.setVisibility(View.VISIBLE);
+        }
     }
 
 }
