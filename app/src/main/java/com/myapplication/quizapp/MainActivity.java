@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -71,10 +72,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnB.setBackgroundColor(Color.WHITE);
         btnC.setBackgroundColor(Color.WHITE);
         btnD.setBackgroundColor(Color.WHITE);
-        restartBtn.setBackgroundColor(Color.GREEN);
+        restartBtn.setBackgroundColor(Color.rgb(76,175,80));
         Button clicked=(Button)view;
+
         if(view.getId()==R.id.restart)
         {
+            numbers=shuffleQuestionList();
             restartQuiz();
         }
         if(clicked.getId()==R.id.submit)
@@ -138,7 +141,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
         //Random rnd = new Random();
-        //numbers=shuffleQuestionList();
         qNo=numbers.get(index);
         index++;
         switch (qNo) {
