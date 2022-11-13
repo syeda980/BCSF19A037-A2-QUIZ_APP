@@ -171,6 +171,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }    void restartQuiz(){
+        Log.d("here1","in restart");
+        currentQuestion=0;
+        remQuestions=totalQuestions;
+        correct=0;
+        wrong_Answer=0;
+        index=0;
+        question.setVisibility(View.VISIBLE);
+
+        btnA.setVisibility(View.VISIBLE);
+        btnB.setVisibility(View.VISIBLE);
+        btnC.setVisibility(View.VISIBLE);
+        btnD.setVisibility(View.VISIBLE);
+        btnSubmit.setVisibility(View.VISIBLE);
+        correctRes.setVisibility(View.INVISIBLE);
+        wrongRes.setVisibility(View.INVISIBLE);
+        restartBtn.setVisibility(View.INVISIBLE);
+        //numbers=shuffleQuestionList();
+        generateMCQ();
 
     }
 
