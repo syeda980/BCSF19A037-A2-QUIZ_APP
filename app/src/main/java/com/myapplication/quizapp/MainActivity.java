@@ -121,7 +121,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(view.getId()==R.id.summary)
         {
-            Log.d("SUMMARY","SUMMARYYYY111");
             viewSummary();
         }
         if(view.getId()==R.id.Next)
@@ -139,9 +138,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             System.exit(0);
         }
-
-
-
 
     }
     public ArrayList<Integer> shuffleOptionList() {

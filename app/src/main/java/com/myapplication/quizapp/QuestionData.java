@@ -21,7 +21,7 @@ public class QuestionData {
             "Identify the incorrect Java feature."
     };
     public  static  String[][] questionsOptions= {
-            {"6"," 7"," 8","9"},
+            {"6","7","8","9"},
             {"32 and 64"," 32 and 32"," 64 and 64","64 and 28"},
             {"Compile Error", "Throw Exception" , "I ", "24 I"},
             { "char [] ch=new char(5)" , "char [] ch=new char[5]" , "char [] ch=new char()" , "char [] ch=new char[][]" , "char [] ch=new char[5]"},
