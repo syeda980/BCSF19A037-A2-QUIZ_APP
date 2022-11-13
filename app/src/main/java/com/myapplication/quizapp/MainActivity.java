@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     void restartQuiz(){
         Log.d("here1","in restart");
         currentQuestion=0;
-        remQuestions=totalQuestions;
+        remQuestions=10;
         correct=0;
         wrong_Answer=0;
         index=0;
