@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     TextView question, totalQuestion,remQues,correctRes,wrongRes;
-    Button btnA, btnB, btnC, btnD, btnSubmit,restartBtn;
+    Button btnA, btnB, btnC, btnD, btnSubmit,restartBtn,summary;
     int correct = 0;
     int j=0;
     int wrong_Answer = 0;
@@ -47,9 +47,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         restartBtn=findViewById(R.id.restart);
         correctRes=findViewById(R.id.Correct);
         wrongRes=findViewById(R.id.Wrong);
+        summary=findViewById(R.id.viewSummary);
+
         correctRes.setVisibility(View.INVISIBLE);
         wrongRes.setVisibility(View.INVISIBLE);
         restartBtn.setVisibility(View.INVISIBLE);
+        summary.setVisibility(View.INVISIBLE);
 
 
         btnA.setOnClickListener(this);
@@ -181,6 +184,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         correctRes.setText("CORRECT: "+correct);
         wrongRes.setText("WRONG: "+wrong_Answer);
         restartBtn.setVisibility(View.VISIBLE);
+        summary.setVisibility(View.VISIBLE);
 
 
 
