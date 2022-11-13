@@ -100,6 +100,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
 
+
+
     }
     public ArrayList<Integer> shuffleOptionList() {
         ArrayList numbers = new ArrayList();
@@ -119,13 +121,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return numbers;
     }
     public void generateQuestion(int index)
-    {}
+    {
+        question.setText(QuestionData.questions[qNo]);
+        answer = QuestionData.answers[qNo];
+        ArrayList<Integer>numbers1=new ArrayList<Integer>();
+        numbers1=shuffleOptionList();
+        btnA.setText(QuestionData.questionsOptions[qNo][(int) (numbers1.get(0))]);
+        btnB.setText(QuestionData.questionsOptions[qNo][(int) (numbers1.get(1))]);
+        btnC.setText(QuestionData.questionsOptions[qNo][(int) (numbers1.get(2))]);
+        btnD.setText(QuestionData.questionsOptions[qNo][(int) (numbers1.get(3))]);
+        currentQuestion++;
+    }
     private void generateMCQ() {
         if(remQuestions==0)
         {
+            Log.d("hereee","1234567");
             showResult();
             return;
         }
+        //Random rnd = new Random();
+        //numbers=shuffleQuestionList();
         qNo=numbers.get(index);
         index++;
         switch (qNo) {
@@ -170,7 +185,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-    }    void restartQuiz(){
+    }
+    void restartQuiz(){
         Log.d("here1","in restart");
         currentQuestion=0;
         remQuestions=totalQuestions;
@@ -189,7 +205,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         restartBtn.setVisibility(View.INVISIBLE);
         //numbers=shuffleQuestionList();
         generateMCQ();
-
     }
 
 }
