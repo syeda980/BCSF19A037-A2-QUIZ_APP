@@ -7,30 +7,79 @@
     android:background="@color/teal_700"
     tools:context=".MainActivity"
     android:orientation="vertical">
+
     <TextView
         android:id="@+id/totalQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="monospace"
         android:text="Total Questions "
-        android:textSize="20dp"
-        android:textColor="@color/white"
         android:textAlignment="center"
-        />
-    <LinearLayout
-        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/Correct"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_centerInParent="true">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="monospace"
+        android:text="Correct:  "
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/Wrong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        android:text="Wrong"
+
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/remainingQues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="monospace"
+            android:text="Remaining: "
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
         <TextView
             android:id="@+id/QuestionText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="monospace"
             android:text="Here Comes Question Text "
-
-            android:textSize="20dp"
-            android:textColor="@color/white"
             android:textAlignment="center"
-            />
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+
 
         <Button
             android:id="@+id/AnswerA"
@@ -39,8 +88,10 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
             android:text="AnswerA"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             tools:ignore="MissingConstraints" />
+
         <Button
             android:id="@+id/AnswerB"
             android:layout_width="match_parent"
@@ -48,8 +99,10 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
             android:text="Answer B"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             tools:ignore="MissingConstraints" />
+
         <Button
             android:id="@+id/AnswerC"
             android:layout_width="match_parent"
@@ -57,8 +110,10 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
             android:text="Answer C"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             tools:ignore="MissingConstraints" />
+
         <Button
             android:id="@+id/AnswerD"
             android:layout_width="match_parent"
@@ -66,6 +121,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
             android:text="Answer D"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             tools:ignore="MissingConstraints" />
 
@@ -78,9 +134,24 @@
             android:text="Submit"
             android:textColor="@color/white"
             android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/restart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="15dp"
+            android:backgroundTint="#4CAF50"
+            android:text="Restart"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
 
     </LinearLayout>
+
 
 </RelativeLayout>
 
