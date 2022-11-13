@@ -136,7 +136,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void generateMCQ() {
         if(remQuestions==0)
         {
-            Log.d("hereee","1234567");
             showResult();
             return;
         }

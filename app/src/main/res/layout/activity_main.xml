@@ -135,6 +135,21 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/viewSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="15dp"
+            android:backgroundTint="#9D4CAF"
+            android:text="View Summary"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
         <Button
             android:id="@+id/restart"
             android:layout_width="match_parent"
