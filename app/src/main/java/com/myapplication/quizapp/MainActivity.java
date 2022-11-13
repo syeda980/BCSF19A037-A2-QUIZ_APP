@@ -108,9 +108,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     void showResult()
     {
+        question.setVisibility(View.INVISIBLE);
+        btnA.setVisibility(View.INVISIBLE);
+        btnB.setVisibility(View.INVISIBLE);
+        btnC.setVisibility(View.INVISIBLE);
+        btnD.setVisibility(View.INVISIBLE);
+        btnSubmit.setVisibility(View.INVISIBLE);
+        correctRes.setVisibility(View.VISIBLE);
+        wrongRes.setVisibility(View.VISIBLE);
+        correctRes.setText("CORRECT: "+correct);
+        wrongRes.setText("WRONG: "+wrong_Answer);
+        restartBtn.setVisibility(View.VISIBLE);
 
-    }
-    void restartQuiz(){
+
+
+    }    void restartQuiz(){
 
     }
 
