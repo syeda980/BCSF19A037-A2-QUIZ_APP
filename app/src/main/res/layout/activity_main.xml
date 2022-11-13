@@ -61,8 +61,8 @@
             android:id="@+id/remainingQues"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
             android:layout_marginBottom="50dp"
-            android:layout_marginTop="50dp"
             android:fontFamily="monospace"
             android:text="Remaining: "
             android:textAlignment="center"
@@ -73,8 +73,8 @@
         <TextView
             android:id="@+id/QuestionText"
             android:layout_width="match_parent"
-            android:layout_marginBottom="40dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
             android:fontFamily="monospace"
             android:text="Here Comes Question Text "
             android:textAlignment="center"
@@ -136,7 +136,6 @@
             android:textStyle="bold" />
 
 
-
         <Button
             android:id="@+id/AnswerA"
             android:layout_width="match_parent"
@@ -191,6 +190,7 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
+
         <Button
             android:id="@+id/summary"
             android:layout_width="match_parent"
@@ -202,9 +202,7 @@
             android:text="View Summary"
             android:textColor="@color/white"
             android:textSize="20dp"
-            android:textStyle="bold"
-            />
-
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/restart"
@@ -218,7 +216,6 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
-
 
 
     </LinearLayout>

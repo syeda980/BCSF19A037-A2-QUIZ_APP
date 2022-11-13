@@ -91,6 +91,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnD.setBackgroundColor(Color.WHITE);
         restartBtn.setBackgroundColor(Color.rgb(76,175,80));
         summary.setBackgroundColor(Color.rgb(157,76,175));
+        next.setBackgroundColor(Color.rgb(157,76,175));
+
 
         Button clicked=(Button)view;
         if(view.getId()==R.id.restart)
@@ -229,7 +231,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         wrongRes.setText("WRONG: "+wrong_Answer);
         summary.setVisibility(View.VISIBLE);
         restartBtn.setVisibility(View.VISIBLE);
-    }
+          }
     void restartQuiz(){
         Log.d("here1","in restart");
         currentQuestion=0;
