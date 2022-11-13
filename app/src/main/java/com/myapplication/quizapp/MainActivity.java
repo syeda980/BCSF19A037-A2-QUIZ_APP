@@ -114,7 +114,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             remQues.setText("Remaining: "+remQuestions);
             currentQuestion++;
             generateMCQ();
-
         }
         else{
             selectedAnswer=clicked.getText().toString();
@@ -233,7 +232,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         restartBtn.setVisibility(View.VISIBLE);
           }
     void restartQuiz(){
-        Log.d("here1","in restart");
         currentQuestion=0;
         remQuestions=totalQuestions;
         correct=0;
@@ -251,16 +249,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         summary.setVisibility(View.INVISIBLE);
         next.setVisibility(View.INVISIBLE);
         remQues.setText("Remaining: "+remQuestions);
-        //numbers=shuffleQuestionList();
         generateMCQ();
     }
     void viewSummary()
     {
         question.setVisibility(View.INVISIBLE);
-//        btnA.setVisibility(View.INVISIBLE);
-//        btnB.setVisibility(View.INVISIBLE);
-//        btnC.setVisibility(View.INVISIBLE);
-//        btnD.setVisibility(View.INVISIBLE);
         btnSubmit.setVisibility(View.INVISIBLE);
         summary.setVisibility(View.INVISIBLE);
         restartBtn.setVisibility(View.INVISIBLE);
