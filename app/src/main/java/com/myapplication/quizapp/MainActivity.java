@@ -67,6 +67,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        btnA.setBackgroundColor(Color.WHITE);
+        btnB.setBackgroundColor(Color.WHITE);
+        btnC.setBackgroundColor(Color.WHITE);
+        btnD.setBackgroundColor(Color.WHITE);
+        restartBtn.setBackgroundColor(Color.GREEN);
+        Button clicked=(Button)view;
+        if(view.getId()==R.id.restart)
+        {
+            remQues.setText(remQuestions);
+            ArrayList<Integer>numbers3=shuffleQuestionList();
+            restartQuiz();
+        }
+        if(clicked.getId()==R.id.submit)
+        {
+            if(selectedAnswer.equals(answer))
+            {
+                correct++;
+            }
+            else {
+                wrong_Answer++;
+            }
+            remQuestions--;
+            remQues.setText("Remaining: "+remQuestions);
+            currentQuestion++;
+            generateMCQ();
+
+        }
+        else{
+            selectedAnswer=clicked.getText().toString();
+            clicked.setBackgroundColor(Color.LTGRAY);
+        }
+
+
+
+
+
+
+
+
 
 
     }
