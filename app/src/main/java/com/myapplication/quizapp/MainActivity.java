@@ -75,8 +75,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button clicked=(Button)view;
         if(view.getId()==R.id.restart)
         {
-            remQues.setText(remQuestions);
-            ArrayList<Integer>numbers3=shuffleQuestionList();
             restartQuiz();
         }
         if(clicked.getId()==R.id.submit)
@@ -189,12 +187,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     void restartQuiz(){
         Log.d("here1","in restart");
         currentQuestion=0;
-        remQuestions=10;
+        remQuestions=totalQuestions;
         correct=0;
         wrong_Answer=0;
         index=0;
         question.setVisibility(View.VISIBLE);
-
         btnA.setVisibility(View.VISIBLE);
         btnB.setVisibility(View.VISIBLE);
         btnC.setVisibility(View.VISIBLE);
@@ -203,6 +200,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         correctRes.setVisibility(View.INVISIBLE);
         wrongRes.setVisibility(View.INVISIBLE);
         restartBtn.setVisibility(View.INVISIBLE);
+        remQues.setText("Remaining: "+remQuestions);
         //numbers=shuffleQuestionList();
         generateMCQ();
     }
